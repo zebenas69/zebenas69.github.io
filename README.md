@@ -138,8 +138,8 @@ footer{
     <p>Providing professional, safe, and compassionate dental services in Malawi.  
     Your smile is our priority.</p>
 
-    <!-- MAKE SURE photo.JPEG is in same folder as this file -->
-    <img src="man.jpg">
+    <!-- MAKE SURE man.JPEG is in same folder as this file -->
+    <img src="photo.jpeg">
 
     <div class="buttons">
         <!-- NO SPACES IN PHONE NUMBER -->
@@ -148,9 +148,9 @@ footer{
         <!-- CORRECT WHATSAPP FORMAT -->
         <a href="https://wa.me/265885095592" class="whatsapp" target="_blank">WhatsApp</a>
 
-        <a href="https://wa.me/265885095592" class="book">Book Appointment</a>
+        <a href="#booking" class="book">Book Appointment</a>
 
-        <!-- LINK TO PAYMENT SECTION -->hancho/Untitled-2.html
+        <!-- LINK TO PAYMENT SECTION -->
         <a href="#payment" class="pay">Payment Methods</a>
     </div>
 </section>
