@@ -138,7 +138,7 @@ footer{
     <p>Providing professional, safe, and compassionate dental services in Malawi.  
     Your smile is our priority.</p>
 
-    <!-- MAKE SURE man.JPEG is in same folder as this file -->
+    <!-- MAKE SURE photo.JPEG is in same folder as this file -->
     <img src="man.jpg">
 
     <div class="buttons">
