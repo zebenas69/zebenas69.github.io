@@ -1,0 +1,479 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - Dental Studio Malawi</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        /* Navigation */
+        nav {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 1rem;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: rgba(255,255,255,0.2);
+        }
+
+        nav a.active {
+            background-color: rgba(255,255,255,0.3);
+        }
+
+        /* Header Section */
+        .page-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+
+        /* Services Grid */
+        .services-container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .service-card h3 {
+            color: #333;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .service-description {
+            color: #666;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .service-details {
+            list-style: none;
+            margin-bottom: 20px;
+            padding: 0;
+        }
+
+        .service-details li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+            color: #555;
+        }
+
+        .service-details li:before {
+            content: "✓";
+            color: #667eea;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .price-tag {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            text-align: center;
+            margin: 20px 0;
+            display: inline-block;
+            width: auto;
+        }
+
+        .book-btn {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            border: 2px solid #667eea;
+            padding: 10px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            width: 100%;
+            text-align: center;
+        }
+
+        .book-btn:hover {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-color: transparent;
+        }
+
+        /* Popular Badge */
+        .popular-badge {
+            position: absolute;
+            top: 20px;
+            right: -30px;
+            background: #ff6b6b;
+            color: white;
+            padding: 5px 30px;
+            transform: rotate(45deg);
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        /* Special Offers Section */
+        .offers-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 20px;
+            margin-top: 50px;
+        }
+
+        .offers-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .offers-container h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+
+        .offers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .offer-card {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .offer-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .offer-price {
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        .original-price {
+            text-decoration: line-through;
+            opacity: 0.7;
+            font-size: 1rem;
+        }
+
+        /* Why Choose Us Section */
+        .why-choose-us {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .why-choose-us h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: #333;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .feature {
+            padding: 20px;
+        }
+
+        .feature .emoji {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .feature h3 {
+            margin-bottom: 10px;
+            color: #667eea;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 5px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="zaze.html">Home</a>
+        <a href="services.html" class="active">Services</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <h1>🦷 Our Dental Services</h1>
+        <p>Professional, Affordable, and Gentle Dental Care in Malawi</p>
+    </header>
+
+    <!-- Main Services -->
+    <main class="services-container">
+        <h2 style="text-align: center; font-size: 2rem; color: #333;">Comprehensive Dental Care</h2>
+        <p style="text-align: center; color: #666; max-width: 700px; margin: 20px auto;">We offer a wide range of dental services to keep your smile healthy and beautiful</p>
+
+        <div class="services-grid">
+            <!-- Service 1: Teeth Cleaning -->
+            <div class="service-card" id="cleaning">
+                <div class="service-icon">🪥</div>
+                <h3>Teeth Cleaning</h3>
+                <p class="service-description">Professional scaling and polishing for a brighter smile</p>
+                <ul class="service-details">
+                    <li>Remove plaque and tartar</li>
+                    <li>Stain removal</li>
+                    <li>Polishing for smoothness</li>
+                    <li>Fresh breath guarantee</li>
+                </ul>
+                <div class="price-tag">MK 25,000</div>
+                <a href="contact.html" class="book-btn">Book Now</a>
+            </div>
+
+            <!-- Service 2: Tooth Extraction -->
+            <div class="service-card" id="extraction">
+                <div class="service-icon">🦷</div>
+                <h3>Tooth Extraction</h3>
+                <p class="service-description">Gentle and painless removal of problematic teeth</p>
+                <ul class="service-details">
+                    <li>Local anesthesia</li>
+                    <li>Simple & surgical extraction</li>
+                    <li>Wisdom tooth removal</li>
+                    <li>Post-op care included</li>
+                </ul>
+                <div class="price-tag">MK 35,000</div>
+                <a href="contact.html" class="book-btn">Book Now</a>
+            </div>
+
+            <!-- Service 3: Braces Installation (Popular) -->
+            <div class="service-card" id="braces">
+                <div class="popular-badge">POPULAR</div>
+                <div class="service-icon">😁</div>
+                <h3>Braces Installation</h3>
+                <p class="service-description">Straighten your smile with modern orthodontics</p>
+                <ul class="service-details">
+                    <li>Initial consultation</li>
+                    <li>Metal or ceramic braces</li>
+                    <li>Monthly adjustments</li>
+                    <li>Retainer included</li>
+                </ul>
+                <div class="price-tag">From MK 250,000</div>
+                <a href="contact.html" class="book-btn">Book Consultation</a>
+            </div>
+
+            <!-- Service 4: Teeth Whitening -->
+            <div class="service-card" id="whitening">
+                <div class="service-icon">✨</div>
+                <h3>Teeth Whitening</h3>
+                <p class="service-description">Professional whitening for a dazzling smile</p>
+                <ul class="service-details">
+                    <li>Professional grade gel</li>
+                    <li>LED accelerated treatment</li>
+                    <li>Up to 8 shades whiter</li>
+                    <li>Results last 6-12 months</li>
+                </ul>
+                <div class="price-tag">MK 45,000</div>
+                <a href="contact.html" class="book-btn">Book Now</a>
+            </div>
+
+            <!-- Service 5: Dental Fillings -->
+            <div class="service-card" id="fillings">
+                <div class="service-icon">🦷</div>
+                <h3>Dental Fillings</h3>
+                <p class="service-description">Tooth-colored fillings for cavities</p>
+                <ul class="service-details">
+                    <li>Composite resin material</li>
+                    <li>Matches tooth color</li>
+                    <li>Durable and long-lasting</li>
+                    <li>Single visit procedure</li>
+                </ul>
+                <div class="price-tag">MK 30,000</div>
+                <a href="contact.html" class="book-btn">Book Now</a>
+            </div>
+
+            <!-- Service 6: Root Canal -->
+            <div class="service-card" id="rootcanal">
+                <div class="service-icon">🔬</div>
+                <h3>Root Canal Treatment</h3>
+                <p class="service-description">Save your natural tooth from extraction</p>
+                <ul class="service-details">
+                    <li>Pain-free procedure</li>
+                    <li>Modern equipment</li>
+                    <li>2-3 visit treatment</li>
+                    <li>Crown restoration</li>
+                </ul>
+                <div class="price-tag">MK 120,000</div>
+                <a href="contact.html" class="book-btn">Book Now</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Special Offers -->
+    <section class="offers-section">
+        <div class="offers-container">
+            <h2>🎉 Special Offers</h2>
+            <div class="offers-grid">
+                <div class="offer-card">
+                    <h3>Family Package</h3>
+                    <p>Cleanings for 4 family members</p>
+                    <div class="offer-price">MK 80,000</div>
+                    <span class="original-price">MK 100,000</span>
+                    <p style="margin-top: 10px;">Save 20%</p>
+                </div>
+                <div class="offer-card">
+                    <h3>Braces + Whitening</h3>
+                    <p>Complete smile makeover</p>
+                    <div class="offer-price">MK 280,000</div>
+                    <span class="original-price">MK 320,000</span>
+                    <p style="margin-top: 10px;">Free whitening</p>
+                </div>
+                <div class="offer-card">
+                    <h3>Student Discount</h3>
+                    <p>With valid student ID</p>
+                    <div class="offer-price">15% OFF</div>
+                    <p>All services</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose-us">
+        <h2>Why Choose Dental Studio Malawi?</h2>
+        <div class="features-grid">
+            <div class="feature">
+                <div class="emoji">👨‍⚕️</div>
+                <h3>Experienced Dentists</h3>
+                <p>10+ years of professional experience</p>
+            </div>
+            <div class="feature">
+                <div class="emoji">🏥</div>
+                <h3>Modern Equipment</h3>
+                <p>Latest dental technology</p>
+            </div>
+            <div class="feature">
+                <div class="emoji">💎</div>
+                <h3>Affordable Prices</h3>
+                <p>Quality care within your budget</p>
+            </div>
+            <div class="feature">
+                <div class="emoji">😊</div>
+                <h3>Pain-Free Procedures</h3>
+                <p>Your comfort is our priority</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section style="text-align: center; padding: 60px 20px; background: #f0f0f0;">
+        <h2 style="font-size: 2rem; margin-bottom: 20px;">Ready for a Brighter Smile?</h2>
+        <p style="margin-bottom: 30px;">Book your appointment today and get a free consultation!</p>
+        <a href="contact.html" style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-size: 1.2rem; font-weight: bold;">Book Appointment Now</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Dental Studio Malawi. All rights reserved.</p>
+        <p style="margin-top: 10px;">📍 City Centre, Lilongwe | 📞 +265 888 123 456</p>
+    </footer>
+</body>
+</html>
